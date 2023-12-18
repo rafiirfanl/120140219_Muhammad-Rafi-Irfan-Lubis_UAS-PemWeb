@@ -2,11 +2,12 @@
 include 'koneksi.php';
 
 $nama_buku = htmlspecialchars($_POST['nama_buku']);
+$penulis = htmlspecialchars($_POST['penulis']);
 $harga_buku = htmlspecialchars($_POST['harga_buku']);
 $kategori_buku = htmlspecialchars($_POST['kategori_buku']);
 $status = htmlspecialchars($_POST['status_buku']);
 
-$query = "INSERT INTO buku (nama_buku, harga_buku, kategori_buku, status_buku) VALUES ('$nama_buku', '$harga_buku', '$kategori_buku', '$status')";
+$query = "INSERT INTO buku (nama_buku, penulis, harga_buku, kategori_buku, status_buku) VALUES ('$nama_buku', '$penulis', '$harga_buku', '$kategori_buku', '$status')";
 
 if ($conn->query($query) === TRUE) {
     header('Location: index.php');
